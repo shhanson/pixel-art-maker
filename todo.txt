@@ -1,0 +1,4 @@
+Reorder colors better
+Toggle gridlines
+Save png image
+Resizing poop
