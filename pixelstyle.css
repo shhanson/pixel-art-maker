@@ -1,5 +1,5 @@
 body {
-    background-color: papayawhip;
+    background-color: skyblue;
 }
 
 main {
@@ -10,7 +10,7 @@ main {
 }
 
 .canvasarea {
-    border: 4px solid black;
+    border: 3px solid midnightblue;
     display: inline-block;
     margin-top: 1%;
 }
@@ -37,7 +37,7 @@ main {
     width: 200px;
     height: 700px;
     display: inline-block;
-    background-color: papayawhip;
+    background-color: skyblue;
     box-sizing: border-box;
     text-align: center;
 }
