@@ -1,5 +1,19 @@
 //CONSTANT VALUES
-const COLORS = ["#000000", "#0000BC", "#0000FC", "#004058", "#005800", "#0058F8", "#006800", "#007800", "#0078F8", "#008888", "#00A800", "#00A844", "#00B800", "#00E8D8", "#00FCFC", "#3CBCFC", "#4428BC", "#503000", "#58D854", "#58F898", "#6844FC", "#6888FC", "#787878", "#7C7C7C", "#881400", "#940084", "#9878F8", "#A4E4FC", "#A80020", "#A81000", "#AC7C00", "#B8B8F8", "#B8F818", "#B8F8B8", "#B8F8D8", "#BCBCBC", "#D800CC", "#D8B8F8", "#D8F878", "#E40058", "#E45C10", "#F0D0B0", "#F83800", "#F85898", "#F87858", "#F878F8", "#F8A4C0", "#F8B800", "#F8B8F8", "#F8D878", "#F8D8F8", "#F8F8F8", "#FCA044", "#FCE0A8", "#FCFCFC", "#FFFFFF"];
+const COLORS = [
+"#000000", "#0000BC", "#0000FC", "#004058",
+"#005800", "#0058F8", "#006800", "#007800",
+"#0078F8", "#008888", "#00A800", "#00A844",
+"#00B800", "#00E8D8", "#00FCFC", "#3CBCFC",
+"#4428BC", "#503000", "#58D854", "#58F898",
+"#6844FC", "#6888FC", "#787878", "#7C7C7C",
+"#881400", "#940084", "#9878F8", "#A4E4FC",
+"#A80020", "#A81000", "#AC7C00", "#B8B8F8",
+"#B8F818", "#B8F8B8", "#B8F8D8", "#BCBCBC",
+"#D800CC", "#D8B8F8", "#D8F878", "#E40058",
+"#E45C10", "#F0D0B0", "#F83800", "#F85898",
+"#F87858", "#F878F8", "#F8A4C0", "#F8B800",
+"#F8B8F8", "#F8D878", "#F8D8F8", "#F8F8F8",
+"#FCA044", "#FCE0A8", "#FCFCFC", "#FFFFFF"];
 const CANVAS_WIDTH = 600;
 const CANVAS_HEIGHT = 600;
 const DIV_LENGTH = 20;
@@ -9,7 +23,6 @@ const NUM_DIVS = (CANVAS_WIDTH / DIV_LENGTH) * (CANVAS_HEIGHT / DIV_LENGTH);
 //Global variables :(
 var currentColor = "black";
 var mousedownFlag = false;
-var mouseoverFlag = false;
 
 //Setup canvas (drawing area)
 function setupCanvas() {
@@ -91,17 +104,19 @@ function setupColorPicker() {
     }
 }
 
-//Setup clear button + selectedColor indicator
-//In the future: might separate these elements from the pickerarea
-function setupControlPanel() {
-    //Create the selectedColor div
+//Setup selected color indicator
+function setupSelectedColor(){
     let footer = document.querySelector(".pickerarea");
     let selectedColor = document.createElement("div");
     selectedColor.className = "selecteddiv";
     selectedColor.style.backgroundColor = currentColor;
     footer.appendChild(selectedColor);
+}
 
+//Setup clear button
+function setupClearButton() {
     //Create the clear button
+    let footer = document.querySelector(".pickerarea");
     let clearButton = document.createElement("button");
     let buttonText = document.createTextNode("Clear");
     clearButton.className = "clearbutton";
@@ -122,4 +137,6 @@ function setupControlPanel() {
 
 setupCanvas();
 setupColorPicker();
-setupControlPanel();
+setupSelectedColor();
+setupClearButton();
+// setupControlPanel();
